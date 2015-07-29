@@ -1,6 +1,8 @@
 ngBoxFill
 =========
 
+[![Build Status](https://travis-ci.org/OpenServicesEU/ngBoxFill.svg?branch=master)](https://travis-ci.org/OpenServicesEU/ngBoxFill)
+
 Angular.js directive that scales the content of the element it is applied on to
 fill the box of the element itself. It works by transcluding the descendants of
 the directive into a into an `inline` element, taking its `offsetWidth` and
