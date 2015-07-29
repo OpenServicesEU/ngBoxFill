@@ -6,6 +6,11 @@ module.exports = function(grunt) {
       },
       all: ['ng-boxfill.js','gruntfile.js']
     },
+    csslint: {
+      strict: {
+        src: ['ng-boxfill.css']
+      },
+    },
     uglify: {
       js: {
         files: {
@@ -16,5 +21,7 @@ module.exports = function(grunt) {
   });
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.registerTask('default', [ 'jshint', 'uglify']);
+  grunt.loadNpmTasks('grunt-contrib-csslint');
+  grunt.registerTask('default', [ 'jshint', 'csslint', 'uglify']);
+  grunt.registerTask('travis', [ 'jshint', 'csslint' ]);
 };
