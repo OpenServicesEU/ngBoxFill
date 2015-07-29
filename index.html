@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>ngBoxFill</title>
+  <link rel="stylesheet" type="text/css" href="ng-boxfill.css">
+  <style type="text/css">
+    body {
+      margin: 0;
+    }
+    .fullscreen {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom:0;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body ng-app="demo" ng-controller="DemoCtrl">
+  <div class="fullscreen" ng-box-fill>
+    <h1>Hello World!</h1>
+    <div>{{ time | date:'medium' }}</div>
+    <div><img src="http://placehold.it/350x250"></div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+  <script src="ng-boxfill.js"></script>
+  <script>
+    angular.module("demo", ['ngBoxFill'])
+    .controller('DemoCtrl', ['$scope', '$interval', function($scope, $interval) {
+      var time = $interval(function() {
+        $scope.time = new Date();
+      });
+      $scope.$on('$destroy', function() {
+        $interval.cancel(time);
+      });
+    }]);
+  </script>
+</body>
+</html>

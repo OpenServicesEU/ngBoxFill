@@ -1,0 +1,10 @@
+.boxFillWrap {
+  display: block;
+  position: absolute;
+  word-wrap: break-word;
+  line-height: normal;
+  transform-origin: left top;
+}
+.boxFillInitial {
+  visibility: hidden;
+}
