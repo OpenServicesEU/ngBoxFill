@@ -17,11 +17,23 @@ module.exports = function(grunt) {
           'ng-boxfill.min.js': 'ng-boxfill.js'
         }
       }
+    },
+    cssmin: {
+      options: {
+        shorthandCompacting: false,
+        roundingPrecision: -1
+      },
+      target: {
+        files: {
+          'ng-boxfill.min.css': 'ng-boxfill.css'
+        }
+      }
     }
   });
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-csslint');
-  grunt.registerTask('default', [ 'jshint', 'csslint', 'uglify']);
-  grunt.registerTask('travis', [ 'jshint', 'csslint' ]);
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.registerTask('default', ['jshint', 'csslint', 'uglify', 'cssmin']);
+  grunt.registerTask('travis', ['jshint', 'csslint' ]);
 };
