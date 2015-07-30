@@ -60,7 +60,9 @@
             scope.$watchGroup(
               [
                 function () { return element.prop('offsetHeight'); },
-                function () { return element.prop('offsetWidth'); }
+                function () { return element.prop('offsetWidth'); },
+                function () { return container.prop('offsetHeight'); },
+                function () { return container.prop('offsetHeight'); }
               ],
               resize
             );
