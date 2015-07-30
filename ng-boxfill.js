@@ -38,7 +38,6 @@
           },
           transclude: true,
           link: function (scope, element, attrs, ctrl, transclude) {
-            console.log(scope, element, attrs, ctrl, transclude);
             var container = angular.element('<div class="boxFillWrap boxFillInitial"/>');
             transclude(scope.$parent, function(clone, scope) {
               container.append(clone);
