@@ -2,6 +2,7 @@ ngBoxFill
 =========
 
 [![Build Status](https://travis-ci.org/OpenServicesEU/ngBoxFill.svg?branch=master)](https://travis-ci.org/OpenServicesEU/ngBoxFill)
+[![Bower version](https://badge.fury.io/bo/ngBoxFill.svg)](http://badge.fury.io/bo/ngBoxFill)
 
 Angular.js directive that scales the content of the element it is applied on to
 fill the box of the element itself. It works by transcluding the descendants of
